@@ -22,6 +22,7 @@ from django.urls import include
 
 # The path() function expects at least two arguments: route and view.
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path("admin/", admin.site.urls),
+    path("polls/", include("polls.urls")),
     path("two_endpoints/", include("two_endpoints.urls")),
 ]
