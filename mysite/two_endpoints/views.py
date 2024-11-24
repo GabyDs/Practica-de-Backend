@@ -1,7 +1,7 @@
 # from django.shortcuts import render
 
 # Django uses request and response objects to pass state through the system
-from django.http import HttpResponse
+from django.http import HttpResponse, JsonResponse
 
 import json
 
@@ -11,8 +11,9 @@ def index(request):
 
 def user(request):
     res = {"user":"user"}
-    return HttpResponse(json.dumps(res))
+    # default: "content_type", "application/json"
+    return JsonResponse(res)
 
 def admin(request):
-    res = {"admin":"admin"}
-    return HttpResponse(json.dumps(res))
+    res = {"user":"admin"}
+    return JsonResponse(res)
